@@ -40,9 +40,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state is AuthAuthenticatedState) {
-            Navigator.of(context).pushReplacementNamed('/transactions');
-          } else if (state is AuthErrorState) {
+          if (state is AuthErrorState) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.message),
