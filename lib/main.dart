@@ -52,7 +52,8 @@ class InitialAuthCheck extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
-        if (state is AuthLoadingState || state is AuthInitialState) {
+        // Sirf app-start pe (secure storage check hone tak) yeh splash dikhega
+        if (state is AuthInitialState) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
           );
@@ -63,6 +64,10 @@ class InitialAuthCheck extends StatelessWidget {
             child: const TransactionListPage(),
           );
         }
+        // AuthUnauthenticatedState, AuthLoadingState (login attempt ke waqt),
+        // aur AuthErrorState — teeno cases me LoginPage hi dikhegi.
+        // Isse LoginPage ka SAME widget instance mounted rehta hai,
+        // aur uska apna BlocConsumer listener error/loading sahi se handle karta hai.
         return const LoginPage();
       },
     );
