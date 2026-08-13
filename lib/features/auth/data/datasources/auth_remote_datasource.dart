@@ -13,7 +13,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDatasource {
   @override
   Future<LoginResponseModel> login(String username, String password) async {
    final response = await apiService.login(username, password);
-   print("rtykmnb $response");
+   
    return LoginResponseModel.fromJson(response);
   }
 }

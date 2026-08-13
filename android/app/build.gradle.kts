@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.elyx_assignment_app"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk =  37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

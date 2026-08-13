@@ -54,9 +54,11 @@ class TransactionDetailPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 28, horizontal: 20),
               decoration: BoxDecoration(
-                color: _statusColor().withOpacity(0.08),
+                color: _statusColor().withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: _statusColor().withOpacity(0.3)),
+                border: Border.all(
+                  color: _statusColor().withValues(alpha: 0.3),
+                ),
               ),
               child: Column(
                 children: [

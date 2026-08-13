@@ -23,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ) async {
     emit(AuthLoadingState());
     final result = await loginUseCase(event.username, event.password);
-    print("res $result");
+    
     if (result is Left) {
       emit(AuthErrorState((result as Left).value.message));
     } else {
