@@ -51,7 +51,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     SessionExpiredEvent event,
     Emitter<AuthState> emit,
   ) async {
-    await authRepository.logout(); // token clear karo
+    await authRepository.logout();  
     emit(const AuthErrorState('Session expired. Please login again.'));
     emit(AuthUnauthenticatedState());
   }

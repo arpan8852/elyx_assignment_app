@@ -1,11 +1,7 @@
 // lib/core/network/mock_api_service.dart
 import 'dart:math';
 import '../errors/exceptions.dart';
-
-/// Yeh class real backend ka role play karti hai.
-/// ApiClient isko call karega jaise woh ek real server ho.
-/// Isse structure exactly waisa hi rehta hai jaise real API
-/// integration hoti - future me sirf yeh class replace karni hogi.
+ 
 class ApiService {
   // In-memory fake transaction database (50 records)
   static final List<Map<String, dynamic>> _allTransactions = List.generate(50, (
